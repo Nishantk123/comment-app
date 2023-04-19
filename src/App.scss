@@ -1,0 +1,44 @@
+.app{
+  background-color: #f7faff;
+  min-height: 100vh;
+}
+
+.profile-icon{
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.comment-box{
+  border: 1px solid gray;
+  width: 100% !important;
+  padding: 20px;
+  border-radius: 10px;
+  .comment-text{
+    font-family: none;
+    font-size: 15px;
+  }
+}
+.send-icon{
+  height: 40px;
+  cursor: pointer;
+}
+.arrow-icon{
+  height: 20px;
+}
+.chat-icon{
+  height: 20px;
+  margin-left: 20px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+.comment-count{
+  font-size: 14px;
+}
+
+ol, ul {
+  @media (min-width:641px){
+    padding-left: 2rem;
+  }
+  padding-left: 1rem;
+}
