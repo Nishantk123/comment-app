@@ -1,20 +1,44 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { Comments, AddComment } from "./layout/Comments";
-import { selectGroupedComments } from "./redux";
+import React, { useState } from "react";
+import Comment from "./layout/Comment";
 import "./App.scss";
+import Utils from "./utils/Utils";
+const comments = {
+  id: 1,
+  items: [],
+};
+ const App=() =>{
+  // const comments = useSelector(selectGroupedComments);
+  // console.log("My comments", comments);
+  const [commentsData, setCommentsData] = useState(comments);
 
-export default function App() {
-  const comments = useSelector(selectGroupedComments);
-  console.log("My comments", comments);
+  const { insertComment, editComment, deleteComment } = Utils();
+
+  const handleInsertNode = (folderId, item) => {
+    const finalStructure = insertComment(commentsData, folderId, item);
+    setCommentsData(finalStructure);
+  };
+
+  const handleEditNode = (folderId, value) => {
+    const finalStructure = editComment(commentsData, folderId, value);
+    setCommentsData(finalStructure);
+  };
+
+  const handleDeleteNode = (folderId) => {
+    const finalStructure = deleteComment(commentsData, folderId);
+    const temp = { ...finalStructure };
+    setCommentsData(temp);
+  };
+console.log(commentsData)
   return (
-    <div className="app py-3">
-      <div className="container ">
-        <div className="my-3">
-          <Comments comments={comments} />
-        </div>
-        <AddComment pid="root" />
-      </div>
-    </div>
+    <div className="app">
+    <Comment
+      handleInsertNode={handleInsertNode}
+      handleEditNode={handleEditNode}
+      handleDeleteNode={handleDeleteNode}
+      comment={commentsData}
+    />
+  </div>
   );
 }
+
+export default App

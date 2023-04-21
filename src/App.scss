@@ -9,6 +9,13 @@
   margin-right: 10px;
 }
 
+.comment-container{
+  @media (min-width:641px){
+    padding-left: 16px;
+  }
+  padding-left: 8px;
+
+}
 .comment-box{
   border: 1px solid gray;
   width: 100% !important;
@@ -18,9 +25,20 @@
     font-family: none;
     font-size: 15px;
   }
+  .comment-text-editable{
+    font-family: none;
+    font-size: 15px;
+  }
+  .comment-text-editable:focus-visible{
+    font-family: none;
+    font-size: 15px;
+    border: unset !important;
+  }
 }
 .send-icon{
-  height: 40px;
+  height: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
   cursor: pointer;
 }
 .arrow-icon{
@@ -28,8 +46,14 @@
 }
 .chat-icon{
   height: 20px;
-  margin-left: 20px;
+  margin-left: 10px;
   margin-top: 2px;
+  cursor: pointer;
+}
+.chat-icon-small{
+  height: 30px;
+  margin-left: 10px;
+  margin-top: -2px;
   cursor: pointer;
 }
 .comment-count{
@@ -41,4 +65,105 @@ ol, ul {
     padding-left: 2rem;
   }
   padding-left: 1rem;
+}
+
+
+.product-image{
+  height: 200px;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// static one
+
+
+* {
+  // font-family: Monaco, sans-serif;
+}
+
+.App {
+  margin-top: 20px;
+  // width: fit-content;
+}
+
+.commentContainer {
+  // margin-top: 6px;
+  // background-color: #d3d3d3e0;
+  display: flex;
+  flex-direction: column;
+  // padding: 5px 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.commentContainer:hover {
+  // background-color: #d3d3d3bf;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.inputContainer > span {
+  margin-top: 5px;
+}
+
+.inputContainer__input {
+  margin: 6px 0 0px 0;
+  padding: 5px;
+  display: flex;
+  border: 1px solid lightgray;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #e7e7e7;
+}
+
+.first_input {
+  margin: 0;
+}
+
+.commentContainer > span {
+  margin: 0 5px;
+}
+
+.reply {
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 5px;
+  color: #4e4e4e;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.comment {
+  color: #ffffff;
+  background-color: #569dff;
+  letter-spacing: 0.8px;
 }
